@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+    <h1>Nos Livres :</h1>
+
+    <table>
+        <tr>
+            <td>
+                <p>Titre</p>
+            </td>
+            <td>
+                <p>Date de parution</p>
+            </td>
+        </tr>
+        {% for book in list %}
+            <tr>
+                <td>
+                    <p>{{ book.titre }}</p>
+                </td>
+                <td>
+                    <p>{{ book.dateParu|date('y-m-d') }}</p>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ path('AddBook') }}">Ajouter un livre</a>
+
+
+{% endblock %}

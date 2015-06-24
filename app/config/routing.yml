@@ -1,0 +1,5 @@
+exo_sample:
+    resource: "@ExoSampleBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+    <h1>Les auteurs :</h1>
+
+    <table>
+        <tr>
+            <td>
+                <p>Nom de l'auteur</p>
+            </td>
+            <td>
+                <p>Prénom</p>
+            </td>
+            <td>
+                <p>Date de naissance</p>
+            </td>
+            <td></td>
+        </tr>
+        {% for author in listAut %}
+            <tr>
+                <td>
+                    <p>{{ author.nom }}</p>
+                </td>
+                <td>
+                    <p>{{ author.prenom }}</p>
+                </td>
+                <td>
+                    <p>date de naissance : {{ author.born|date('y-m-d') }}</p>
+                </td>
+                <td>
+                    <a href="{{ path('removeAuthor', {'id':author.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    <a href="{{ path('AddAuthor') }}">Ajouter un auteur</a>
+
+{% endblock %}
